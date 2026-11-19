@@ -1,0 +1,532 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>籌碼K線 雙11 銷售企劃</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* 版面：上方兩個頁籤（銷售企劃／訂戶運營），各自有頁首與章節導覽；與醞釀行動頁同一家族，數字一律 tabular */
+:root{
+  --paper:#E9EDF0;--sheet:#F7F9FA;--card:#FFFFFF;--ink:#121A22;--soft:#4A5866;--rule:#C3CCD4;--thead:#DDE3E8;
+  --red:#B4232F;--red-soft:#F6DEDF;--red-ink:#7A1620;
+  --amber:#F2A93B;--amber-soft:#FCEBC8;--amber-ink:#5C3B00;
+  --night:#121A22;--on-night:#F2EFE8;
+  --teal:#CDE7E3;--teal-ink:#0E4D45;
+  --vip:#E3DAF5;--vip-ink:#3E2A73;
+  --hl:#E3EBF4;--hl-line:#B8C9DC;--hl-ink:#1F3F66;
+  --s:#DCE8F7;--s-ink:#163C6B;--s-line:#9DB9DE;--y:#D7ECE6;--y-ink:#155244;--y-line:#94C7B9;
+  --l1:#1F5FAE;--l2:#B4232F;--l3:#2E6B24;
+  --font:'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif;
+  --mono:'Roboto Mono',ui-monospace,'SFMono-Regular',Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0F151B;--sheet:#18212A;--card:#141C24;--ink:#E8EDF1;--soft:#A3B0BD;--rule:#2E3B48;--thead:#1F2A35;
+  --red:#F06A72;--red-soft:#3D1A1D;--red-ink:#F7B3B7;
+  --amber-soft:#3A2A0E;--amber-ink:#F6C677;
+  --night:#05090D;--teal:#123A35;--teal-ink:#9FE0D6;--vip:#2A2140;--vip-ink:#CDBDF5;--hl:#1C2A3A;--hl-line:#34506E;--hl-ink:#B9D0EC;--s:#1B2E47;--s-ink:#B9D5F7;--s-line:#35557E;--y:#16352E;--y-ink:#A6DDCD;--y-line:#2E6457;
+  --l1:#7FB0EE;--l2:#F06A72;--l3:#8FD07F;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0F151B;--sheet:#18212A;--card:#141C24;--ink:#E8EDF1;--soft:#A3B0BD;--rule:#2E3B48;--thead:#1F2A35;
+  --red:#F06A72;--red-soft:#3D1A1D;--red-ink:#F7B3B7;
+  --amber-soft:#3A2A0E;--amber-ink:#F6C677;
+  --night:#05090D;--teal:#123A35;--teal-ink:#9FE0D6;--vip:#2A2140;--vip-ink:#CDBDF5;--hl:#1C2A3A;--hl-line:#34506E;--hl-ink:#B9D0EC;--s:#1B2E47;--s-ink:#B9D5F7;--s-line:#35557E;--y:#16352E;--y-ink:#A6DDCD;--y-line:#2E6457;
+  --l1:#7FB0EE;--l2:#F06A72;--l3:#8FD07F;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.7}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px;padding-block:0 96px}
+.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:6;height:60px;display:flex;align-items:flex-end;gap:6px;background:var(--paper);border-bottom:2px solid var(--ink);margin:0 -20px;padding:0 20px;overflow-x:auto}
+.tab{flex:none;appearance:none;border:1px solid var(--rule);border-bottom:none;background:var(--card);color:var(--soft);font:inherit;font-size:16px;font-weight:900;padding:8px 18px 7px;border-radius:8px 8px 0 0;cursor:pointer;display:flex;flex-direction:column;align-items:flex-start;line-height:1.3}
+.tab small{font-size:12px;font-weight:500}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.tab:hover{color:var(--ink)}.tab[aria-selected="true"]:hover{color:var(--paper)}
+.tab:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.panel>header{margin-top:30px}
+header{border-bottom:3px solid var(--ink);padding-bottom:20px}
+.kicker{margin:0 0 6px;font-size:14px;color:var(--soft);letter-spacing:.04em}
+h1{margin:0;font-size:clamp(28px,4.6vw,44px);font-weight:900;line-height:1.2;text-wrap:balance}
+.thesis{margin:14px 0 0;font-size:clamp(17px,2vw,20px);font-weight:700;border-left:5px solid var(--red);padding-left:14px}
+.meta{display:flex;flex-wrap:wrap;gap:8px 20px;margin:14px 0 0;font-size:14px;color:var(--soft)}
+.meta b{color:var(--ink)}
+nav{position:sticky;top:calc(env(safe-area-inset-top,0px) + 60px);z-index:5;background:var(--paper);border-bottom:1px solid var(--rule);margin:0 -20px;padding:10px 20px;display:flex;gap:6px;overflow-x:auto}
+nav a{flex:none;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:4px 12px;border:1px solid var(--rule);border-radius:999px;background:var(--card)}
+nav a:hover,nav a:focus-visible{border-color:var(--ink);outline:none}
+section{scroll-margin-top:124px}
+h2{margin:52px 0 6px;font-size:24px;font-weight:900;display:flex;gap:10px;align-items:baseline}
+h2 .n{font-family:var(--mono);font-size:15px;color:var(--red)}
+h2 .new{align-self:center;font-size:12px;font-weight:700;padding:1px 10px;border-radius:999px;background:var(--amber-soft);color:var(--amber-ink);border:1px solid var(--amber);white-space:nowrap}
+h3{margin:28px 0 8px;font-size:18px;font-weight:900}
+.sub{margin:0 0 14px;color:var(--soft);font-size:15px}
+p{margin:0 0 10px}
+.prose{}
+/* 目標三情境 */
+.lv{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:16px 0}
+.lv div{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.lv .tag{align-self:flex-start;font-size:12px;font-weight:700;padding:1px 10px;border-radius:999px;border:1px solid currentColor}
+.lv .v{font-family:var(--mono);font-size:clamp(22px,3vw,30px);font-weight:700;font-variant-numeric:tabular-nums;line-height:1.3}
+.lv small{font-size:13px;color:var(--soft)}
+.lv .a{color:var(--l1)}.lv .b{color:var(--l2)}.lv .c{color:var(--l3)}
+.lv .b{border-width:2px}
+.basis{background:var(--sheet);border:1px solid var(--rule);border-radius:8px;padding:12px 16px;font-size:15px}
+/* 表格 */
+.scroll{overflow-x:auto;border:1px solid var(--rule);border-radius:8px;background:var(--card)}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:14.5px}
+th,td{text-align:left;vertical-align:top;padding:10px 13px;border-bottom:1px solid var(--rule)}
+thead th{background:var(--thead);font-size:13px;color:var(--soft);font-weight:700}
+tbody th{font-weight:700}
+tbody tr:last-child th,tbody tr:last-child td{border-bottom:none}
+.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.hi{color:var(--red);font-weight:700}
+tr.sum th,tr.sum td{background:var(--sheet);font-weight:700}
+.sep{border-left:2px solid var(--rule)}
+/* 時間軸 */
+.tl{min-width:760px;display:grid;grid-template-columns:repeat(17,minmax(0,1fr));gap:4px 3px;padding:14px}
+.tl .d{font-family:var(--mono);font-size:12px;color:var(--soft);text-align:center;font-variant-numeric:tabular-nums}
+.tl .d.k{color:var(--ink);font-weight:700}
+.bar{border-radius:6px;padding:8px 10px;font-size:13px;font-weight:700;line-height:1.35;min-width:0}
+.bar span{display:block;font-weight:400;font-size:12px}
+.b-vip{background:var(--vip);color:var(--vip-ink)}
+.b-early{background:var(--amber-soft);color:var(--amber-ink);border:2px solid var(--amber)}
+.b-main{background:var(--red-soft);color:var(--red-ink)}
+.b-cd{background:var(--night);color:var(--on-night)}
+.b-extra{background:var(--teal);color:var(--teal-ink)}
+.pin{font-size:12px;font-weight:700;border-left:2px solid var(--ink);padding-left:6px;line-height:1.35}
+.phase-tag{display:inline-block;font-size:12px;font-weight:700;padding:1px 10px;border-radius:999px;white-space:nowrap}
+/* 分層溝通 */
+.grp{display:inline-block;font-family:var(--mono);font-size:13px;font-weight:700;padding:0 8px;border-radius:6px;background:var(--thead)}
+.role-a{color:var(--l3);font-weight:700}.role-b{color:var(--soft);font-weight:700}
+.owner{display:inline-block;font-size:12px;font-weight:700;padding:0 8px;border-radius:999px;margin:0 6px 2px 0;background:var(--vip);color:var(--vip-ink);white-space:nowrap}
+.owner.luna{background:var(--teal);color:var(--teal-ink)}
+.ops{font-size:14px;line-height:1.55}
+.ops.muted{color:var(--soft)}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px}
+.box{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:14px 18px;min-width:0}
+.box h4{margin:0 0 4px;font-size:16px;font-weight:900}
+.box p{margin:0;font-size:15px}
+.ask{background:var(--amber-soft);color:var(--amber-ink);border-radius:8px;padding:10px 14px;font-size:14px;font-weight:700;margin:12px 0 0}
+.link{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:16px 18px}
+.link a{font-weight:700;color:var(--ink);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--red)}
+.link a:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.pending{border:2px dashed var(--rule);border-radius:10px;padding:16px 18px;color:var(--soft)}
+.pending b{color:var(--ink)}
+.assets tr.main th,.assets tr.main td{background:var(--hl);color:var(--ink);border-top:2px solid var(--hl-line)}
+.assets tr.main th{font-weight:900;color:var(--hl-ink)}
+.assets tr.child th{font-weight:500;padding-left:30px;position:relative}
+.assets tr.child th::before{content:"└";position:absolute;left:12px;color:var(--soft)}
+.fmt{display:inline-block;font-size:12px;font-weight:700;padding:0 8px;border-radius:999px;background:var(--card);border:1px solid var(--hl-line);color:var(--hl-ink);white-space:nowrap}
+.plain{margin:6px 0 0;padding-left:1.2em;font-size:15px;display:flex;flex-direction:column;gap:6px}
+.seq{margin:6px 0 0;padding-left:1.6em;font-size:15px;font-variant-numeric:tabular-nums;display:flex;flex-direction:column;gap:2px}
+.h3new{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.h3new .new{font-size:12px;font-weight:700;padding:1px 10px;border-radius:999px;background:var(--amber-soft);color:var(--amber-ink);border:1px solid var(--amber);white-space:nowrap}
+.push td{text-align:center;vertical-align:middle;font-weight:700;border-left:1px solid var(--rule)}
+.push thead th:not(:first-child){text-align:center}
+.push small{display:block;font-size:13px;font-weight:500;color:var(--soft);margin-top:2px}
+.push small.hi{color:var(--red);font-weight:700}
+.push tr.seg th{background:var(--hl);color:var(--hl-ink)}
+.push tr.chn th{background:var(--thead);color:var(--ink)}
+.push tr.chn th,.push tr.chn td{border-top:2px solid var(--rule)}
+.push td.na{color:var(--soft);font-weight:400}
+
+/* 訂戶運營頁籤 */
+.lead{margin:12px 0 0}
+.who{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:8px 14px;align-items:center;margin:14px 0 0}
+.who dt,.who dd{margin:0}
+.who .aud{display:block;text-align:center;min-width:7em}
+.who dd{font-size:15px;color:var(--soft)}
+.who dd b{font-family:var(--mono);color:var(--ink);margin-right:10px}
+.mile{list-style:none;margin:22px 0 0;padding:0;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
+.mile li{border-top:4px solid var(--ink);padding:8px 4px 0;display:flex;flex-direction:column;min-width:0}
+.mile li.go{border-top-color:var(--red)}
+.mile b{font-family:var(--mono);font-size:18px;font-weight:700;font-variant-numeric:tabular-nums}
+.mile span{font-size:13px;color:var(--soft);line-height:1.45}
+.aud{display:inline-block;font-size:13px;font-weight:700;padding:1px 10px;border-radius:999px;white-space:nowrap;border:1px solid}
+.aud.s{background:var(--s);color:var(--s-ink);border-color:var(--s-line)}
+.aud.y{background:var(--y);color:var(--y-ink);border-color:var(--y-line)}
+/* 分眾策略 */
+.strat td{line-height:1.6}
+.strat td b{color:var(--ink)}
+.q{margin:0;padding-left:1.1em}
+.q li{margin:0 0 2px}
+/* 每日排程 */
+.sched{min-width:760px}
+.sched td,.sched th{border-left:1px solid var(--rule)}
+.sched tr>*:first-child{border-left:none}
+.sched .day{font-family:var(--mono);font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;background:var(--sheet)}
+.sched thead .hs{background:var(--s);color:var(--s-ink)}
+.sched thead .hy{background:var(--y);color:var(--y-ink)}
+.sched td.sync{background:var(--s);color:var(--s-ink);vertical-align:middle}
+.sched td.empty{color:var(--soft);text-align:center;vertical-align:middle}
+.what{display:block;font-weight:700;line-height:1.5}
+.ch{display:block;font-size:13px;color:var(--soft);margin-top:2px}
+.note{display:block;font-size:13px;color:var(--red);font-weight:700;margin-top:2px}
+.collab b{display:block;font-size:13px;color:var(--hl-ink)}
+/* 待辦 */
+.todo td.due{font-family:var(--mono);font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+.todo tr.dgrp td{background:var(--hl);color:var(--hl-ink);font-weight:900;font-size:14px;border-top:2px solid var(--hl-line);padding-block:7px}
+.todo tr.dgrp span{font-weight:500;margin-left:8px}
+.flag{display:inline-block;margin-left:4px;font-size:12px;font-weight:700;padding:0 8px;border-radius:999px;border:1px solid var(--red);color:var(--red);white-space:nowrap}
+@media(max-width:760px){.lv,.two{grid-template-columns:1fr}.mile{grid-template-columns:repeat(4,minmax(0,1fr))}}
+</style>
+
+<div class="wrap">
+<div class="tabs" role="tablist" aria-label="企劃頁籤"><button class="tab" role="tab" id="tab-sales" aria-controls="sales" aria-selected="true" data-panel="sales">銷售企劃<small>11/3–11/13 檔期</small></button><button class="tab" role="tab" id="tab-subs" aria-controls="subs" aria-selected="false" tabindex="-1" data-panel="subs">訂戶運營規劃<small>10/27–11/2 雙11 前</small></button></div>
+
+<div class="panel" id="sales" role="tabpanel" aria-labelledby="tab-sales">
+<header>
+  <p class="kicker">籌碼K線 雙11 銷售企劃　10/12 版</p>
+  <h1>籌碼K線 雙11 銷售企劃</h1>
+  <p class="thesis">承接 VIP 體驗的購買意願，用「早鳥搶先購加碼抽獎」鎖定高意圖用戶，再以「分層溝通」收網。</p>
+  <div class="meta"><span>檔期 <b>11/3–11/13</b>（共 11 天）</span><span>前導 <b>10/28–11/2 VIP 大放送</b></span><span>主方案截止 <b>11/11 23:59</b></span></div>
+</header>
+
+<nav aria-label="章節">
+  <a href="#overview">活動概要</a><a href="#rhythm">檔期節奏</a><a href="#pricing">商品與定價</a><a href="#audience">客群與分層溝通</a><a href="#channels">渠道與排程</a><a href="#assets">素材盤點</a><a href="#budget">行銷預算</a><a href="#kpi">成效指標</a><a href="#roles">分工與時程</a>
+</nav>
+
+<section id="overview">
+<h2><span class="n">01</span>活動概要與營收目標</h2>
+<div class="lv">
+  <div class="a"><span class="tag">LV1 保守　YOY +50%</span><span class="v">$26,104,133</span><small>總套數約 5,219 套（2025 雙11 3,655 套）</small></div>
+  <div class="b"><span class="tag">LV2 基準　YOY +100%</span><span class="v">$34,798,990</span><small>總套數約 6,958 套（2025 雙11 3,655 套）</small></div>
+  <div class="c"><span class="tag">LV3 樂觀　YOY +130%</span><span class="v">$40,024,122</span><small>總套數約 8,002 套（2025 雙11 3,655 套）</small></div>
+</div>
+<p class="basis"><b>推估邏輯：</b>2025 雙11 營收 $17,400,661，同樣主打降價加抽權限。今年採用相同策略的活動，YOY 落在 +90%～+160% 區間（排除 3 月的 +339%，因為去年 3 月基期特別低）。各方案套數依 5 月銷售占比拆分。</p>
+
+<h3>各方案套數 × 三情境</h3>
+<div class="scroll"><table>
+<thead><tr><th>方案</th><th class="num">2026 雙11 建議訂價</th><th class="num">5 月銷售 套數（占比）</th><th class="num">2025 雙11 套數</th><th class="num sep">LV1 保守</th><th class="num">LV2 基準</th><th class="num">LV3 樂觀</th></tr></thead>
+<tbody>
+<tr><th>籌碼K APP</th><td class="num">$4,211</td><td class="num">651（66.4%）</td><td class="num">2,545</td><td class="num sep">3,467</td><td class="num">4,622</td><td class="num">5,316</td></tr>
+<tr><th>籌碼K PC</th><td class="num">$7,911</td><td class="num">75（7.7%）</td><td class="num">262</td><td class="num sep">399</td><td class="num">532</td><td class="num">612</td></tr>
+<tr><th>PRIME 方案</th><td class="num">$10,811</td><td class="num">100（10.2%）</td><td class="num">362</td><td class="num sep">533</td><td class="num">710</td><td class="num">817</td></tr>
+<tr><th>全 APP 組合包</th><td class="num">$8,811</td><td class="num">19（1.9%）</td><td class="num">200</td><td class="num sep">101</td><td class="num">135</td><td class="num">155</td></tr>
+<tr><th>股市三K</th><td class="num">$6,811</td><td class="num">18（1.8%）</td><td class="num">—</td><td class="num sep">96</td><td class="num">128</td><td class="num">147</td></tr>
+<tr><th>加價購</th><td class="num">—</td><td class="num">117（11.9%）</td><td class="num">286</td><td class="num sep">623</td><td class="num">831</td><td class="num">955</td></tr>
+<tr class="sum"><th>合計套數</th><td class="num"></td><td class="num">980</td><td class="num">3,655</td><td class="num sep">5,219</td><td class="num">6,958</td><td class="num">8,002</td></tr>
+<tr class="sum"><th>合計營收</th><td class="num"></td><td class="num">$5,253,139</td><td class="num">$17,400,661</td><td class="num sep">~$26,104,133</td><td class="num">~$34,798,990</td><td class="num">~$40,024,122</td></tr>
+<tr class="sum"><th>YOY vs 2025 雙11</th><td class="num"></td><td class="num">—</td><td class="num">+22.0%</td><td class="num sep" style="color:var(--l1)">+50%</td><td class="num" style="color:var(--l2)">+100%</td><td class="num" style="color:var(--l3)">+130%</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="rhythm">
+<h2><span class="n">02</span>檔期節奏</h2>
+<p class="prose">整體設計透過<b>更換誘因、分層溝通、真實倒數與需求匹配</b>，逐步承接不同決策狀態的用戶，以提高全檔期累積轉換率與營收。依用戶決策進程分為四個階段。</p>
+
+<div class="scroll" style="margin:14px 0 18px"><div class="tl" role="img" aria-label="10/28 至 11/13 檔期時間軸">
+  <div class="d">10/28</div><div class="d">10/29</div><div class="d">10/30</div><div class="d">10/31</div><div class="d">11/1</div><div class="d">11/2</div>
+  <div class="d k">11/3</div><div class="d">11/4</div><div class="d">11/5</div><div class="d k">11/6</div><div class="d">11/7</div><div class="d">11/8</div><div class="d">11/9</div><div class="d k">11/10</div><div class="d k">11/11</div><div class="d k">11/12</div><div class="d">11/13</div>
+  <div class="bar b-vip" style="grid-column:1/7">VIP 大放送<span>醞釀期，全體免費用戶 VIP 全開</span></div>
+  <div class="bar b-early" style="grid-column:7/10">早鳥搶先購<span>iPhone 加碼抽獎</span></div>
+  <div class="bar b-main" style="grid-column:10/14">雙11 正式期<span>抽 1111 天權限</span></div>
+  <div class="bar b-cd" style="grid-column:14/16">主活動倒數<span>真實截止</span></div>
+  <div class="bar b-extra" style="grid-column:16/18">加開<span>需求匹配</span></div>
+  <div class="pin" style="grid-column:7/10">試用次數調降、開賣</div>
+  <div class="pin" style="grid-column:10/14">分層溝通開始</div>
+  <div class="pin" style="grid-column:14/16">11/11 23:59 下架</div>
+  <div class="pin" style="grid-column:16/18">限量加開 88 組</div>
+</div></div>
+
+<div class="scroll"><table>
+<thead><tr><th style="width:15%">時間</th><th style="width:18%">銷售階段</th><th style="width:30%">主要利益</th><th>這一段要做到的事</th></tr></thead>
+<tbody>
+<tr><th class="num" style="text-align:left">11/3～11/5</th><td><span class="phase-tag b-early">早鳥搶先購</span></td><td>iPhone 加碼抽獎＋正式活動共同權益</td><td>承接 VIP 體驗後的高意圖用戶，促使提早決策</td></tr>
+<tr><th class="num" style="text-align:left">11/6～11/9</th><td><span class="phase-tag b-main">雙11 正式期</span></td><td>抽 1111 天權限＋依未購障礙分層溝通</td><td>以全新誘因切換主活動，依前期未購行為分層溝通</td></tr>
+<tr><th class="num" style="text-align:left">11/10～11/11</th><td><span class="phase-tag b-cd">主活動倒數</span></td><td>真實主方案截止</td><td>以明確截止時間收斂仍在觀望的需求</td></tr>
+<tr><th class="num" style="text-align:left">11/12～11/13</th><td><span class="phase-tag b-extra">加開與需求匹配</span></td><td>原方案加開＋特定族群增加偏好產品權限</td><td>延續過往有效的加開機制；偏好明確的用戶加贈相符產品權限</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="pricing">
+<h2><span class="n">03</span>商品與定價</h2>
+<p class="sub">「11」結尾節慶定價為主；2026 年隨新增「主動式ETF」功能與「籌K＋起K」連動調整。</p>
+<div class="scroll"><table>
+<thead><tr><th>產品線（NT$）</th><th class="num">2023</th><th class="num">2024</th><th class="num">2025</th><th class="num">2026 建議</th><th>定價策略演進重點</th></tr></thead>
+<tbody>
+<tr><th>籌碼K APP</th><td class="num">3,511</td><td class="num">3,511</td><td class="num">3,811</td><td class="num hi">4,211</td><td>2023 漲幅大、2024 未調漲，2025、2026 擴大漲幅</td></tr>
+<tr><th>籌碼K PC</th><td class="num">7,911</td><td class="num">7,911</td><td class="num">7,911</td><td class="num hi">7,911</td><td>2026 迭代 AI 新功能，主打漲價前最後優惠</td></tr>
+<tr><th>PRIME 方案（所有大眾產品）</th><td class="num">8,911</td><td class="num">8,911</td><td class="num">9,999</td><td class="num hi">10,811</td><td>2025 新增「美股+ETF」、2026 新增「主動式ETF」調漲</td></tr>
+<tr><th>全 APP 組合包（所有大眾 APP）</th><td class="num">未推出</td><td class="num">6,811</td><td class="num">7,888</td><td class="num hi">8,811</td><td>2024 首推；2025「美股+ETF」、2026「主動式ETF」調漲</td></tr>
+<tr><th>股市三K（籌起價 APP）</th><td class="num">5,811</td><td class="num">5,811</td><td class="num">5,811</td><td class="num hi">6,811</td><td>2026 隨「籌K+起K」漲價而調漲</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="audience">
+<h2><span class="n">04</span>目標客群與分層溝通</h2>
+
+<h3>目標客群</h3>
+<div class="scroll"><table>
+<thead><tr><th style="width:9%">分群</th><th style="width:28%">定義</th><th style="width:10%">種類</th><th style="width:13%">角色</th><th>10/13～11/2 分群運營</th></tr></thead>
+<tbody>
+<tr><th><span class="grp">新-1a</span></th><td>今年首登、從未訂閱、近 30 日有用</td><td>活躍用戶</td><td class="role-a">增量主力</td><td class="ops muted"><span class="owner luna">LUNA</span>運營暖場</td></tr>
+<tr><th><span class="grp">新-2</span></th><td>往年首登、從未付費、近 30 日有用</td><td>活躍用戶</td><td class="role-a">增量主力</td><td class="ops muted"><span class="owner luna">LUNA</span>運營暖場</td></tr>
+<tr><th><span class="grp">召-1</span></th><td>曾付費、已到期、近 30 日仍在用</td><td>活躍用戶</td><td class="role-a">增量主力</td><td class="ops muted"><span class="owner luna">LUNA</span>運營暖場</td></tr>
+<tr><th><span class="grp">續-1</span></th><td>現役月／季／半年／一次性非年</td><td>既有訂戶</td><td class="role-a">增量主力</td><td class="ops"><span class="owner">詠弦</span>預告雙11 優惠可以省錢、幫用戶換算單價、解決轉換摩擦（換方案、尚有權限可遞延等）</td></tr>
+<tr><th><span class="grp">續-2</span></th><td>現役年方案</td><td>既有訂戶</td><td class="role-a">增量主力</td><td class="ops"><span class="owner">詠弦</span>跨產品使用教學文，降低陌生感並建立組合價值認知</td></tr>
+<tr><th><span class="grp">新-1b</span></th><td>今年首登、從未訂閱、最後登入 6–9 月</td><td>流失用戶</td><td class="role-b">先召回再收割</td><td class="ops muted"><span class="owner luna">LUNA</span>運營暖場</td></tr>
+<tr><th><span class="grp">召-2a</span></th><td>曾付費、已到期、31–90 日未開 App</td><td>流失用戶</td><td class="role-b">先召回再收割</td><td class="ops muted"><span class="owner luna">LUNA</span>運營暖場</td></tr>
+<tr><th><span class="grp">召-2b</span></th><td>曾付費、已到期、90 日以上未開 App</td><td>流失用戶</td><td class="role-b">先召回再收割</td><td class="ops muted"><span class="owner luna">LUNA</span>運營暖場</td></tr>
+<tr><th><span class="grp">新-1c</span></th><td>今年首登、從未訂閱、最後登入 1–5 月</td><td>流失用戶</td><td class="role-b">先召回再收割</td><td class="ops muted"><span class="owner luna">LUNA</span>運營暖場</td></tr>
+</tbody></table></div>
+
+<h3 class="h3new">各分眾與渠道主推方案<span class="new">10/13 新增</span></h3>
+<p class="sub">欄位為用戶目前主要使用的產品；「備案」為主推方案效果不如預期時的替代方案。</p>
+<div class="scroll"><table class="push">
+<thead><tr><th style="width:20%">分眾＆渠道 ＼ 使用產品</th><th style="width:18%">籌K APP</th><th style="width:20%">籌K PC</th><th style="width:21%">價K</th><th>其他大眾小產品</th></tr></thead>
+<tbody>
+<tr class="seg"><th>免費用戶<small>新-1a、新-2、召-1 等</small></th><td>籌K APP</td><td>籌K PC<small>主打即將漲價</small></td><td rowspan="3">全APP組合<small>備案：股市三K</small></td><td rowspan="3">PRIME<small>備案：全APP組合</small></td></tr>
+<tr class="seg"><th>續約訂戶＿年訂<small>續-2</small></th><td>PRIME</td><td rowspan="2">PRIME</td></tr>
+<tr class="seg"><th>續約訂戶＿非年訂<small>續-1</small></th><td>籌K APP</td></tr>
+<tr class="chn"><th>同學會APP、懸浮按鈕</th><td>籌K APP</td><td class="na">—</td><td class="na">—</td><td class="na">—</td></tr>
+<tr class="chn"><th>LINE@</th><td colspan="4">APP／股市三K／PRIME（備案：全APP組合）</td></tr>
+<tr class="chn"><th>內廣</th><td colspan="4">PRIME（備案：全APP組合）</td></tr>
+</tbody></table></div>
+
+<h3>正式期：未購障礙分層溝通（11/6–11/9）</h3>
+<div class="scroll"><table>
+<thead><tr><th style="width:14%">素材</th><th>主要對象</th><th>用戶目前狀態</th><th>核心任務</th><th>溝通重點</th></tr></thead>
+<tbody>
+<tr><th>A 共通活動組</th><td>兩群中的控制組</td><td>尚未購買</td><td>測量一般活動素材的基準效果</td><td>抽 1111 天＋雙11 最低價</td></tr>
+<tr><th>B 決策說服組</th><td>點擊活動，但未進購物車</td><td>已被活動吸引，但購買理由不足</td><td>讓用戶覺得方案值得買</td><td>完整權益、總價值、每天成本、免費與付費差異</td></tr>
+<tr><th>C 需求喚起組</th><td>曝光活動，但未點擊</td><td>原素材未引起興趣</td><td>讓用戶發現產品與自己有關</td><td>投資痛點、使用情境、核心功能成果</td></tr>
+</tbody></table></div>
+
+<div class="scroll" style="margin-top:12px"><table>
+<thead><tr><th style="width:12%">日期</th><th>A 共通素材</th><th>B 決策說服</th><th>C 需求喚起</th></tr></thead>
+<tbody>
+<tr><th class="num" style="text-align:left">11/7</th><td>抽 1111 天正式開跑</td><td>強調完整權益與每日價值</td><td>用投資痛點重新吸引</td></tr>
+<tr><th class="num" style="text-align:left">11/8</th><td>雙11 最低價持續</td><td>免費版與專業版差異</td><td>呈現核心功能能解決什麼</td></tr>
+<tr><th class="num" style="text-align:left">11/9</th><td>即將進入倒數</td><td>統整「為什麼值得現在買」</td><td>痛點＋活動利益＋立即查看</td></tr>
+</tbody></table></div>
+
+<h3>加開期：特定族群加贈偏好產品權限（11/12～11/13）</h3>
+<p class="sub">需求匹配加碼名單：找出 11/11 前多次看到活動卻未行動、但具有明確產品功能偏好的用戶。</p>
+<div class="scroll"><table>
+<thead><tr><th>使用行為訊號</th><th style="width:16%">推測偏好</th><th style="width:22%">建議加贈產品</th></tr></thead>
+<tbody>
+<tr><td>經常查看美股行情、搜尋美股代號、使用美股功能</td><th>美股投資</th><td>美股K線 一年</td></tr>
+<tr><td>經常查看 ETF、ETF 成分股、資金流向或相關內容</td><th>ETF 投資</th><td>ETF 一年</td></tr>
+<tr><td>經常查看財報、估值、基本面或價值選股</td><th>價值投資</th><td>營收飆漲追蹤器 一年</td></tr>
+<tr><td>經常查看台股籌碼、法人、大戶散戶籌碼</td><th>籌碼投資</th><td>分點K線 一年</td></tr>
+<tr><td>沒有明確集中行為</td><th>偏好不明</th><td>不納入個人化加碼</td></tr>
+</tbody></table></div>
+<div class="two" style="margin-top:12px">
+  <div class="box"><h4>核心族群</h4><p>多次曝光、完全未點擊、偏好明確。</p></div>
+  <div class="box"><h4>擴充族群</h4><p>曾點擊但未購買、偏好明確。</p></div>
+</div>
+<p class="ask">請數據組優先進行事前評估：確認是否有足夠人數進行曝光或是有更好的分類。</p>
+</section>
+
+<section id="channels">
+<h2><span class="n">05</span>渠道與投放排程</h2>
+<div class="link"><span>逐日渠道、對象與素材排程，以執行表為準。</span><a href="https://docs.google.com/spreadsheets/d/1joEvgEd5IyHJx95iVAotlyBep6YDdEEKm_3X9oPMqZY/edit?gid=260319730#gid=260319730" target="_blank" rel="noopener">開啟執行表：渠道與投放排程</a></div>
+</section>
+
+<section id="assets">
+<h2><span class="n">06</span>總素材盤點<span class="new">10/13 新增</span></h2>
+<div class="scroll"><table class="assets">
+<thead><tr><th style="width:15%">素材</th><th style="width:28%">產品</th><th style="width:33%">需要準備的內容</th><th style="width:16%">預估數量</th><th style="width:8%">形式</th></tr></thead>
+<tbody>
+<tr class="main"><th>獎項／贈品圖</th><td>全產品共用</td><td>iPhone Duo、1111 天權限</td><td>約 3～5 組</td><td><span class="fmt">圖片</span></td></tr>
+
+<tr class="main"><th>活動主視覺</th><td>籌碼K線APP、籌碼K線PC、PRIME、全APP組合包、股市三K（備用）</td><td>早鳥搶先購（倒數）、正式雙11、倒數（24 &amp; 12）、加開（倒數）</td><td>每階段一組，共 4 組</td><td><span class="fmt">圖片</span></td></tr>
+<tr class="child"><th>渠道延伸素材</th><td>籌碼K線APP、籌碼K線PC、PRIME、全APP組合包、股市三K（備用）</td><td>App 彈窗、Banner、跑馬燈、推播、LINE…</td><td>依產品、階段及渠道延伸</td><td></td></tr>
+<tr class="child"><th>分眾銷售素材</th><td>籌碼K線APP</td><td>A 抽獎價格版、B 產品價值版、C 投資需求版</td><td>依階段及渠道延伸</td><td></td></tr>
+<tr class="child"><th>偏好產品加贈權限</th><td>美股K線／價值K線／主動式ETF／分點K線</td><td>各產品的核心利益、權限期間、加贈價值與使用情境</td><td>每項產品 1 組</td><td></td></tr>
+
+<tr class="main"><th>商品包圖</th><td>籌碼K線APP、籌碼K線PC、PRIME、全APP組合包、股市三K（備用）</td><td>各商品方案的價格、權益、抽獎與 CTA</td><td>依商品包數量</td><td><span class="fmt">圖片</span></td></tr>
+<tr class="child"><th>偏好產品加贈權限</th><td>美股K線／價值K線／主動式ETF／分點K線</td><td>各產品的核心利益、權限期間、加贈價值與使用情境</td><td>每項產品 1 組，共 4 組</td><td></td></tr>
+
+<tr class="main"><th>銷售短影音</th><td>籌碼K線APP</td><td>早鳥版（倒數）、正式開跑版、倒數版、加開版（直接倒數）</td><td>每階段 1 支 × 廣告尺寸，共 8 支</td><td><span class="fmt">影片</span></td></tr>
+<tr class="child"><th>廣告短影音</th><td>籌碼K線APP</td><td>早鳥版、正式開跑版、倒數版、加開版</td><td>每階段 2 支，共 4 支</td><td></td></tr>
+
+<tr class="main"><th>文案</th><td>籌碼K線APP、籌碼K線PC、PRIME、全APP組合包、股市三K（備用）</td><td>跑馬燈、推播、直播影音、簡訊、EDM、Line@…</td><td>依產品、階段及渠道延伸</td><td><span class="fmt">文案</span></td></tr>
+</tbody></table></div>
+
+<div class="two" style="margin-top:14px">
+  <div class="box"><h4>額外提醒</h4>
+    <ul class="plain">
+      <li><b>籌碼K線PC</b>：要做漲價前最後優惠，全階段素材貫穿。</li>
+      <li><b>PRIME、全APP組合包</b>：新增主動式ETF，LOGO 新增。</li>
+    </ul>
+  </div>
+  <div class="box"><h4>製作順序</h4>
+    <ol class="seq">
+      <li>共用商品包及贈品圖</li>
+      <li>早鳥 iPhone 主視覺</li>
+      <li>正式期 1111 天主視覺</li>
+      <li>產品價值分眾版</li>
+      <li>投資痛點分眾版</li>
+      <li>倒數 48 小時版</li>
+      <li>最後 24 小時版</li>
+      <li>原方案加開版</li>
+      <li>美股、ETF、價值K線三個權限加碼模組</li>
+    </ol>
+  </div>
+</div>
+</section>
+
+<section id="budget">
+<h2><span class="n">07</span>行銷預算規劃<span class="new">10/13 新增</span></h2>
+
+<h3>預算總額：營收目標的 10%</h3>
+<div class="scroll"><table>
+<thead><tr><th>情境</th><th class="num">營收目標</th><th class="num">付費預算（10%）</th></tr></thead>
+<tbody>
+<tr><th style="color:var(--l1)">LV1 保守</th><td class="num">$26,104,133</td><td class="num hi">$2,610,413</td></tr>
+<tr><th style="color:var(--l2)">LV2 基準</th><td class="num">$34,798,990</td><td class="num hi">$3,479,899</td></tr>
+</tbody></table></div>
+
+<h3>付費渠道預算分配</h3>
+<div class="scroll"><table>
+<thead><tr><th style="width:16%">渠道</th><th class="num" style="width:8%">比例</th><th class="num" style="width:14%">LV1 預算</th><th class="num" style="width:14%">LV2 預算</th><th>分配理由</th></tr></thead>
+<tbody>
+<tr><th>廣告</th><td class="num">45%</td><td class="num">$1,174,686</td><td class="num">$1,565,955</td><td>主要觸及新戶與站外流失戶，可隨 ROAS 彈性加減</td></tr>
+<tr><th>Line@ 付費推文</th><td class="num">30%</td><td class="num">$783,124</td><td class="num">$1,043,970</td><td>歷年 ROAS 最高（9.34～23.4），優先加碼</td></tr>
+<tr><th>簡訊</th><td class="num">15%</td><td class="num">$391,562</td><td class="num">$521,985</td><td>過去重複觸及後 ROAS 降至 2.1～2.7，只發高意圖名單與流失一季內用戶</td></tr>
+<tr><th>EDM</th><td class="num">10%</td><td class="num">$261,041</td><td class="num">$347,990</td><td>單次成本低，但 ROAS 已下修，作為輔助觸及</td></tr>
+<tr class="sum"><th>合計</th><td class="num">100%</td><td class="num">$2,610,413</td><td class="num">$3,479,899</td><td></td></tr>
+</tbody></table></div>
+
+<h3>獎品成本</h3>
+<div class="scroll"><table>
+<thead><tr><th>項目</th><th style="width:20%">期間</th><th class="num" style="width:22%">成本</th></tr></thead>
+<tbody>
+<tr><th>iPhone Duo 512GB 加碼抽獎</th><td>11/3～11/5</td><td class="num">$81,900 × 1 台</td></tr>
+<tr><th>1111 天專業版權限</th><td>11/6～11/9</td><td class="num">無現金成本</td></tr>
+<tr><th>偏好產品權限一年</th><td>11/12～11/13</td><td class="num">無現金成本</td></tr>
+</tbody></table></div>
+
+<h3>投放規則</h3>
+<div class="scroll"><table>
+<tbody>
+<tr><th style="width:20%">加碼門檻</th><td>渠道 ROAS &gt; 0.5 即可加碼</td></tr>
+<tr><th>頻次上限</th><td>每人整檔期付費觸及最多 4 次</td></tr>
+<tr><th>檢查點</th><td>依各渠道 ROAS 動態增減預算</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="kpi">
+<h2><span class="n">08</span>成效指標與檢查點</h2>
+<div class="pending"><b>待補</b>：KPI 定義、11/6 檢查點要看的指標，以及數字不如預期時的調整機制。</div>
+</section>
+
+<section id="roles">
+<h2><span class="n">09</span>分工與時程</h2>
+<div class="link"><span>各部門負責項目與交付日期，以執行表為準。</span><a href="https://docs.google.com/spreadsheets/d/1joEvgEd5IyHJx95iVAotlyBep6YDdEEKm_3X9oPMqZY/edit?gid=1019167622#gid=1019167622" target="_blank" rel="noopener">開啟執行表：分工與時程</a></div>
+</section>
+</div>
+
+<div class="panel" id="subs" role="tabpanel" aria-labelledby="tab-subs" hidden>
+<header>
+  <p class="kicker">籌碼K線 雙11 訂戶運營　10/14 版</p>
+  <h1>雙11 前訂戶運營</h1>
+  <p class="lead">10/27 起暖場，11/3 開賣時把轉年訂、升級組合包的疑慮先解掉。</p>
+  <dl class="who">
+    <dt><span class="aud s">短天期訂戶</span></dt><dd><b>續-1</b>現役月／季／半年／一次性非年</dd>
+    <dt><span class="aud y">年訂戶</span></dt><dd><b>續-2</b>現役年方案</dd>
+  </dl>
+  <ol class="mile">
+    <li><b>10/14</b><span>規則定案、需求發出</span></li>
+    <li><b>10/22</b><span>案例收稿</span></li>
+    <li><b>10/23</b><span>案例定稿</span></li>
+    <li><b>10/27</b><span>素材上架、運營開始</span></li>
+    <li><b>10/31</b><span>升級預告</span></li>
+    <li><b>11/2</b><span>早鳥預告</span></li>
+    <li class="go"><b>11/3</b><span>開賣</span></li>
+  </ol>
+</header>
+
+<nav aria-label="章節">
+  <a href="#strategy">分眾策略</a><a href="#schedule">每日排程</a><a href="#todo">待辦事項</a>
+</nav>
+
+<section id="strategy">
+<h2><span class="n">01</span>分眾策略</h2>
+<div class="scroll"><table class="strat">
+<thead><tr><th style="width:12%">對象</th><th style="width:27%">10/27～11/2 銷售前運營</th><th style="width:31%">11/3 開賣後要解決的問題<br>（商品頁加強說明）</th><th>核心溝通</th></tr></thead>
+<tbody>
+<tr><th><span class="aud s">短天期訂戶</span></th><td>透過核心功能實戰，建立持續使用習慣與長期需求</td><td><ul class="q"><li>年訂省多少</li><li>剩餘權益如何處理</li><li>轉換是否吃虧</li></ul></td><td><b>使用越久，年訂平均成本越低；雙11 是轉年訂的最佳時點</b></td></tr>
+<tr><th><span class="aud y">年訂戶</span></th><td>3 篇跨產品案例＋組合包權限試用 5 天</td><td><ul class="q"><li>已有權益如何處理</li><li>組合包多了什麼</li><li>升級是否划算</li></ul></td><td><b>不只是多一套工具，而是補齊不同市場與投資決策環節</b></td></tr>
+</tbody></table></div>
+</section>
+
+<section id="schedule">
+<h2><span class="n">02</span>每日排程</h2>
+<p class="sub">短天期訂戶同時收到 LUNA 的同步運營（泡泡圖），以及訂戶專屬的預告訊息。</p>
+<div class="scroll"><table class="sched">
+<thead><tr><th style="width:9%">日期</th><th class="hs" style="width:23%">短天期：同步運營</th><th class="hs" style="width:32%">短天期：訂戶專屬</th><th class="hy">年訂戶</th></tr></thead>
+<tbody>
+<tr><td class="day">10/27</td>
+  <td class="sync" rowspan="7"><span class="what">同步運營活動</span>10/28～11/2 每天主打一項 VIP 功能<span class="ch" style="color:inherit">渠道：泡泡圖</span></td>
+  <td class="empty" rowspan="4">—</td>
+  <td><span class="what">發布案例一</span><span class="ch">渠道：跑馬燈＋盤後彈窗</span><span class="note">外包寫手 10/22 前完稿</span></td></tr>
+<tr><td class="day">10/28</td>
+  <td><span class="what">發布案例二</span><span class="ch">渠道：跑馬燈＋盤後彈窗</span><span class="note">外包寫手 10/22 前完稿</span></td></tr>
+<tr><td class="day">10/29</td>
+  <td><span class="what">發布案例三</span><span class="ch">渠道：跑馬燈＋盤後彈窗</span><span class="note">外包寫手 10/22 前完稿</span></td></tr>
+<tr><td class="day">10/30</td>
+  <td><span class="what">發布案例一</span><span class="ch">渠道：跑馬燈＋盤後彈窗</span></td></tr>
+<tr><td class="day">10/31</td>
+  <td rowspan="2"><span class="what">雙11 訂戶升級方案即將開放＋強調轉訂優點</span><span class="ch">渠道：跑馬燈＋彈窗（一天一次）</span></td>
+  <td rowspan="2"><span class="what">預告雙11 多產品組合包＋免費體驗權限領取</span><span class="ch">渠道：跑馬燈＋彈窗（一天一次）</span></td></tr>
+<tr><td class="day">11/1</td></tr>
+<tr><td class="day">11/2</td>
+  <td><span class="what">預告明日早鳥開跑及限定利益</span></td>
+  <td><span class="what">預告明日早鳥開跑及限定利益</span><span class="ch">渠道：跑馬燈＋盤後彈窗</span></td></tr>
+</tbody></table></div>
+</section>
+
+<section id="todo">
+<h2><span class="n">03</span>待辦事項</h2>
+<div class="scroll"><table class="todo">
+<thead><tr><th style="width:26%">待辦</th><th style="width:15%">期限</th><th>說明</th></tr></thead>
+<tbody>
+<tr class="dgrp"><td colspan="3">10/14<span>規則定案與需求發出，共 8 項</span></td></tr>
+<tr><th>定案權益處理規則</th><td class="due">10/14</td><td>短天期轉年訂時，剩餘天數遞延；年訂戶升級組合包時，已有權益遞延、不用補差價。</td></tr>
+<tr><th>給外包寫手 3 篇案例的 brief</th><td class="due">10/14</td><td>每篇對應組合包裡的一個市場或決策環節，例如美股、ETF、價值選股，呼應年訂戶的核心溝通「補齊不同市場與投資決策環節」。</td></tr>
+<tr><th>跟數據組提需求：動態短／長訂戶名單</th><td class="due">10/14</td><td>每天更新即時訂戶名單，確認過去的語法是否符合需求。</td></tr>
+<tr><th>組合包 5 天試用權限</th><td class="due">10/14</td><td>只有年訂戶能領（限制不重複領取）。10/27～10/30 從文章裡面領取、10/31～11/2 從彈窗跑馬燈領取。</td></tr>
+<tr><th>跟 LUNA 對齊曝光範圍</th><td class="due">10/14</td><td>泡泡圖只對短天期訂戶顯示；其他訂戶和其他渠道都不曝光運營活動。</td></tr>
+<tr><th>寫 10/31～11/1 的預告文案</th><td class="due">10/14</td><td><span class="aud s">短天期</span> 升級方案即將開放、轉年訂的好處。<br><span class="aud y">年訂</span> 組合包預告與免費體驗領取。</td></tr>
+<tr><th>寫 11/2 的早鳥預告文案</th><td class="due">10/14</td><td>兩群各一版，寫出早鳥限定利益。</td></tr>
+<tr><th>商品頁加強說明規劃</th><td class="due">10/14</td><td>需要分別處理短天期／長天期訂戶的購買障礙。</td></tr>
+
+<tr class="dgrp"><td colspan="3">10/22～10/23<span>案例收稿與定稿</span></td></tr>
+<tr><th>收稿、審稿 3 篇案例</th><td class="due">10/22 收稿<br>10/23 定稿</td><td>確認每篇是否符合需求和閱讀體驗，確認 CTA 正確。<span class="flag">需要請 TIM 協助定稿</span></td></tr>
+
+<tr class="dgrp"><td colspan="3">10/27<span>素材完成並上架</span></td></tr>
+<tr><th>案例的跑馬燈與盤後彈窗素材</th><td class="due">10/27</td><td>3 篇案例各一組。</td></tr>
+<tr><th>所有訂戶運營素材上架</th><td class="due">10/27</td><td>所有素材上架並確認曝光。</td></tr>
+
+<tr class="dgrp"><td colspan="3">10/28～11/2<span>運營期間追蹤</span></td></tr>
+<tr><th>數據追蹤</th><td class="due">10/28～11/2</td><td>確認素材曝光點擊、文章瀏覽、試用領取數。</td></tr>
+</tbody></table></div>
+</section>
+</div>
+</div>
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  function show(id){
+    tabs.forEach(function(t){
+      var on=t.getAttribute('data-panel')===id;
+      t.setAttribute('aria-selected',on?'true':'false');
+      t.tabIndex=on?0:-1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden=!on;
+    });
+    try{localStorage.setItem('d11-tab',id)}catch(e){}
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){show(t.getAttribute('data-panel'));window.scrollTo(0,0);});
+    t.addEventListener('keydown',function(e){
+      if(e.key!=='ArrowRight'&&e.key!=='ArrowLeft')return;
+      var n=tabs[(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length];
+      n.focus();n.click();
+    });
+  });
+  var start='sales',h=(location.hash||'').slice(1),el=h&&document.getElementById(h);
+  if(el){var p=el.closest('.panel');if(p)start=p.id;}
+  else{try{var s=localStorage.getItem('d11-tab');if(s==='subs'||s==='sales')start=s;}catch(e){}}
+  show(start);
+  if(el&&el.id!==start)setTimeout(function(){el.scrollIntoView();},0);
+})();
+</script>
+
+</body></html>
